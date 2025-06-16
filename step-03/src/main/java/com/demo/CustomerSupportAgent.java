@@ -33,14 +33,14 @@ public interface CustomerSupportAgent {
     boolean isSpaceshipQuery(String userMessage);
 
     @UserMessage("""
-        Given the user's query regarding available spaceships for a trip {{message}}, provide a well-formed, clear and concise response listing our applicable spaceships.
-        Only use the spaceship fleet data from {{compatibleSpaceships}} for your response.
+        Given the user's query regarding available spaceships for a trip {message}, provide a well-formed, clear and concise response listing our applicable spaceships.
+        Only use the spaceship fleet data from {compatibleSpaceships} for your response.
         """)
     String suggestSpaceships(String message, List<Spaceship> compatibleSpaceships);
 
     @UserMessage("""
-        Given the user's query regarding available spaceships for a trip {{message}}, provide a well-formed, clear and concise response listing our applicable spaceships.
-        Only use the spaceship fleet data from {{compatibleSpaceships}} for your response.
+        Given the user's query regarding available spaceships for a trip {message}, provide a well-formed, clear and concise response listing our applicable spaceships.
+        Only use the spaceship fleet data from {compatibleSpaceships} for your response.
         """)
     Multi<String> streamSuggestSpaceships(String message, List<Spaceship> compatibleSpaceships);
 }
